@@ -44,4 +44,4 @@ testem.log
 Thumbs.db
 
 # Sensitive info
-/src/app/services/auth/auth.service.ts
+/src/app/services/auth/auth0-variables.ts
