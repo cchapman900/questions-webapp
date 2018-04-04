@@ -1,6 +1,12 @@
-# Webapp
+# Webapp template
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+This template uses Angular, Bootstrap and Auth0 to provide for the basic foundation for a typical Single Page Web 
+Application with the Authentication ready to go.
+
+
+## Configuring Auth0
+
+Edit 
 
 ## Development server
 
