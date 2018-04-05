@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
+import { AuthGuardService as AuthGuard } from './services/auth/auth-guard.service';
 
 
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { AuthService } from './services/auth/auth.service';
 import { CallbackComponent } from './components/callback/callback.component';
 
 import { ROUTES } from './app-routing.module';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { ROUTES } from './app-routing.module';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    CallbackComponent
+    CallbackComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,7 @@ import { ROUTES } from './app-routing.module';
     AppRoutingModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
