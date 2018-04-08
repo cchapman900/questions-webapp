@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './../../services/auth/auth.service';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +9,7 @@ import { AuthService } from './../../services/auth/auth.service';
 export class NavbarComponent implements OnInit {
   isNavbarCollapsed: boolean;
   isLoggedIn: boolean;
-  username: string;
+  profile: string;
 
   constructor(public auth: AuthService) { }
 
@@ -17,10 +17,10 @@ export class NavbarComponent implements OnInit {
     this.isNavbarCollapsed = true;
     this.isLoggedIn = false;
     if (this.auth.userProfile) {
-      this.username = this.auth.userProfile.nickname;
+      this.profile = this.auth.userProfile;
     } else {
       this.auth.getProfile((err, profile) => {
-        this.username = profile.nickname;
+        this.profile = profile;
       });
     }
   }
