@@ -7,6 +7,7 @@ import * as auth0 from 'auth0-js';
 export class AuthService {
 
   // Configure Auth0
+  //noinspection TypeScriptUnresolvedFunction
   auth0 = new auth0.WebAuth({
     domain: AUTH_CONFIG.domain,
     clientID: AUTH_CONFIG.clientID,
