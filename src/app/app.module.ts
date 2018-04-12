@@ -18,6 +18,9 @@ import { CallbackComponent } from './components/callback/callback.component';
 
 import { ROUTES } from './app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ProfileComponent } from './components/dashboard/profile/profile.component';
+import { DashboardSidebarComponent } from './components/dashboard/sidebar/dashboard-sidebar.component';
+import { DashboardHomeComponent } from './components/dashboard/home/dashboard-home.component';
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     LoginComponent,
     RegisterComponent,
     CallbackComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProfileComponent,
+    DashboardSidebarComponent,
+    DashboardHomeComponent
   ],
   imports: [
     BrowserModule,
