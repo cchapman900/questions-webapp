@@ -1,4 +1,4 @@
-# Webapp template
+# Webapp boilerplate
 
 This template uses Angular, Bootstrap and Auth0 to provide for the basic foundation for a typical Single Page Web 
 Application with the Authentication ready to go.
@@ -6,15 +6,18 @@ Application with the Authentication ready to go.
 
 ## Configuring Auth0
 
-Edit 
+After having set up your client on Auth0, rename `src/app/services/auth/auth0-variables.ts.example` to 
+`src/app/services/auth/auth0-variables.ts` and set your `clientID` and `domain` variables
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change 
+any of the source files.
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng generate component component-name` to generate a new component. You can also use 
+`ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
