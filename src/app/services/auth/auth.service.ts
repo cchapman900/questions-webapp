@@ -76,6 +76,7 @@ export class AuthService {
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
+    localStorage.setItem('username', authResult.idTokenPayload.nickname);
     this.router.navigate(['home']);
   }
 
