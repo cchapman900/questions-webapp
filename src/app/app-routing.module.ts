@@ -6,7 +6,7 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DashboardHomeComponent } from './components/dashboard/home/dashboard-home.component';
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
-import { CallbackComponent } from './components/callback/callback.component';
+import { CallbackComponent } from './components/auth/callback/callback.component';
 
 import {AuthGuardService as AuthGuard} from './services/auth/auth-guard.service';
 

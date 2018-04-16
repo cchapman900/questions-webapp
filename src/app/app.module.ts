@@ -14,7 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { AuthService } from './services/auth/auth.service';
-import { CallbackComponent } from './components/callback/callback.component';
+import { CallbackComponent } from './components/auth/callback/callback.component';
 
 import { ROUTES } from './app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
