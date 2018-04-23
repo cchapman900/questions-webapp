@@ -1,8 +1,17 @@
 <main role="main" class="container">
   <div class="card" *ngFor="let question of questions">
     <div class="card-body">
-      <h5 class="card-title">{{question.question}}</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title"><a routerLink="/questions/{{question._id}}"> {{question.question}}</a></h5>
+      <p><strong>Answer:</strong></p>
+      <ul>
+        <li>{{question.answer}}</li>
+      </ul>
+      <p><strong>Distractors:</strong></p>
+      <ul>
+        <li *ngFor="let distractor of question.distractors" class="card-text">
+          {{ distractor }}
+        </li>
+      </ul>
       <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
   </div>

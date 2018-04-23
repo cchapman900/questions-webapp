@@ -23,6 +23,8 @@ import { DashboardSidebarComponent } from './components/dashboard/sidebar/dashbo
 import { DashboardHomeComponent } from './components/dashboard/home/dashboard-home.component';
 import { ListQuestionsComponent } from './components/question/list/list-questions.component';
 import {QuestionService} from './services/question/question.service';
+import { QuestionComponent } from './components/question/question.component';
+import { GetQuestionComponent } from './components/question/get/get-question.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import {QuestionService} from './services/question/question.service';
     ProfileComponent,
     DashboardSidebarComponent,
     DashboardHomeComponent,
-    ListQuestionsComponent
+    ListQuestionsComponent,
+    QuestionComponent,
+    GetQuestionComponent
   ],
   imports: [
     BrowserModule,
