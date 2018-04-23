@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/auth/login/login.component';
+import { ListQuestionsComponent } from './components/question/list/list-questions.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DashboardHomeComponent } from './components/dashboard/home/dashboard-home.component';
@@ -12,6 +13,7 @@ import {AuthGuardService as AuthGuard} from './services/auth/auth-guard.service'
 
 export const ROUTES: Routes = [
   { path: '', component: HomeComponent},
+  { path: 'questions', component: ListQuestionsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'callback', component: CallbackComponent },

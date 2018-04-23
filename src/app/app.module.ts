@@ -21,6 +21,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
 import { DashboardSidebarComponent } from './components/dashboard/sidebar/dashboard-sidebar.component';
 import { DashboardHomeComponent } from './components/dashboard/home/dashboard-home.component';
+import { ListQuestionsComponent } from './components/question/list/list-questions.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { DashboardHomeComponent } from './components/dashboard/home/dashboard-ho
     DashboardComponent,
     ProfileComponent,
     DashboardSidebarComponent,
-    DashboardHomeComponent
+    DashboardHomeComponent,
+    ListQuestionsComponent
   ],
   imports: [
     BrowserModule,
