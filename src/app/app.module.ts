@@ -22,6 +22,7 @@ import { ProfileComponent } from './components/dashboard/profile/profile.compone
 import { DashboardSidebarComponent } from './components/dashboard/sidebar/dashboard-sidebar.component';
 import { DashboardHomeComponent } from './components/dashboard/home/dashboard-home.component';
 import { ListQuestionsComponent } from './components/question/list/list-questions.component';
+import {QuestionService} from './services/question/question.service';
 
 
 @NgModule({
@@ -46,7 +47,11 @@ import { ListQuestionsComponent } from './components/question/list/list-question
     AppRoutingModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [
+    AuthService,
+    AuthGuard,
+    QuestionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
