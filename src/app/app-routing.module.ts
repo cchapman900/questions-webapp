@@ -4,7 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { QuestionComponent } from './components/question/question.component';
 import { ListQuestionsComponent } from './components/question/list/list-questions.component';
-import { GetQuestionComponent } from './components/question/get/get-question.component';
+import { EditQuestionComponent } from './components/question/edit/edit-question.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DashboardHomeComponent } from './components/dashboard/home/dashboard-home.component';
@@ -17,7 +17,7 @@ export const ROUTES: Routes = [
   { path: '', component: HomeComponent},
   { path: 'questions', component: QuestionComponent, children: [
       { path: '', component: ListQuestionsComponent},
-      { path: ':question_id', component: GetQuestionComponent}
+      { path: ':question_id/edit', component: EditQuestionComponent}
     ] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

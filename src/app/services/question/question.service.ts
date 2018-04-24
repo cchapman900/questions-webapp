@@ -20,6 +20,14 @@ export class QuestionService {
       );
   }
 
+  getQuestion (question_id: string): Observable<Question> {
+    return this.http.get<Question>(this.questionsUrl + '/' + question_id);
+  }
+
+  updateQuestion (question: Question): Observable<Question> {
+    return this.http.put<Question>(this.questionsUrl + '/' + question._id, question);
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.

@@ -24,7 +24,8 @@ import { DashboardHomeComponent } from './components/dashboard/home/dashboard-ho
 import { ListQuestionsComponent } from './components/question/list/list-questions.component';
 import {QuestionService} from './services/question/question.service';
 import { QuestionComponent } from './components/question/question.component';
-import { GetQuestionComponent } from './components/question/get/get-question.component';
+import { EditQuestionComponent } from './components/question/edit/edit-question.component';
+import { PaginationComponent } from './components/question/list/pagination/pagination.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { GetQuestionComponent } from './components/question/get/get-question.com
     DashboardHomeComponent,
     ListQuestionsComponent,
     QuestionComponent,
-    GetQuestionComponent
+    EditQuestionComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,51 @@
+<div class="container">
+  <h1>Question Editor</h1>
+  <hr/>
+  <p class="alert alert-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
+  <div class="card col-md-6 offset-md-3">
+    <form class="card-body" *ngIf="question">
+      <div class="form-group">
+        <label for="question">Question</label>
+        <input type="text" class="form-control" id="question"
+               required
+               [(ngModel)]="question.question" name="question">
+      </div>
+
+      <div class="form-group">
+        <label for="answer">Answer</label>
+        <input type="text" class="form-control" id="answer"
+               required
+               [(ngModel)]="question.answer" name="answer">
+      </div>
+
+      <div class="form-group">
+        <label>Distractors</label>
+        <div class="row mb-1" *ngFor="let distractor of question.distractors; trackBy: trackByFn; let i = index">
+          <div class="col-10">
+            <input
+              type="text" class="form-control" id="distractors_{{i}}"
+              required
+              [(ngModel)]="question.distractors[i]" name="distractor_{{i}}">
+          </div>
+          <div class="col-2">
+            <a class="btn btn-danger form-control" (click)="removeDistractor(i)">-</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2 offset-10">
+            <a *ngIf="question.distractors.slice(-1)[0]" class="btn btn-success form-control" (click)="addDistractor()">+</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-4 ml-auto">
+          <button type="submit" class="btn btn-info form-control" (click)="updateQuestion()">Update</button>
+        </div>
+        <div class="col-4 mr-auto">
+          <button type="submit" class="btn btn-danger form-control" (click)="deleteQuestion()">Delete</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
