@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AUTH_CONFIG } from './auth0-variables';
+import { environment } from '../../../environments/environment';
 import * as auth0 from 'auth0-js';
 
 @Injectable()
@@ -11,7 +12,7 @@ export class AuthService {
   auth0 = new auth0.WebAuth({
     domain: AUTH_CONFIG.domain,
     clientID: AUTH_CONFIG.clientID,
-    redirectUri: AUTH_CONFIG.callbackURL,
+    redirectUri: environment.production ? AUTH_CONFIG.callbackURL : 'http://localhost:4200/callback',
     audience: `https://${AUTH_CONFIG.domain}/userinfo`,
     responseType: 'token id_token',
     scope: 'openid profile'
