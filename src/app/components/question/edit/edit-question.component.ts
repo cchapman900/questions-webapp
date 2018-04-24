@@ -75,6 +75,7 @@ export class EditQuestionComponent implements OnInit {
   }
 
   deleteQuestion() {
+    // TODO: Add alert to verify intention of deletion
     this.questionService.deleteQuestion(this.question_id)
       .subscribe(() => {
         this.goBack();

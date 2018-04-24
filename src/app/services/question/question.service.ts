@@ -13,8 +13,9 @@ export class QuestionService {
 
   constructor(private http: HttpClient) { }
 
-  getQuestions (): Observable<Question[]> {
-    return this.http.get<Question[]>(this.questionsUrl)
+  getQuestions (offset: number = null): Observable<Question[]> {
+    const getQuestionsUrl = offset ? this.questionsUrl + '?offset=' + offset : this.questionsUrl;
+    return this.http.get<Question[]>(getQuestionsUrl)
       .pipe(
         catchError(this.handleError('getQuestions', []))
       );

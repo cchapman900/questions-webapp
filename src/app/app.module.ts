@@ -25,7 +25,6 @@ import { ListQuestionsComponent } from './components/question/list/list-question
 import {QuestionService} from './services/question/question.service';
 import { QuestionComponent } from './components/question/question.component';
 import { EditQuestionComponent } from './components/question/edit/edit-question.component';
-import { PaginationComponent } from './components/question/list/pagination/pagination.component';
 
 
 @NgModule({
@@ -42,8 +41,7 @@ import { PaginationComponent } from './components/question/list/pagination/pagin
     DashboardHomeComponent,
     ListQuestionsComponent,
     QuestionComponent,
-    EditQuestionComponent,
-    PaginationComponent
+    EditQuestionComponent
   ],
   imports: [
     BrowserModule,
