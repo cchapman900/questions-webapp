@@ -14,19 +14,21 @@ import { CallbackComponent } from './components/auth/callback/callback.component
 import {AuthGuardService as AuthGuard} from './services/auth/auth-guard.service';
 
 export const ROUTES: Routes = [
-  { path: '', component: HomeComponent},
   { path: 'questions', component: QuestionComponent, children: [
       { path: '', component: ListQuestionsComponent},
       { path: ':question_id/edit', component: EditQuestionComponent, canActivate: [AuthGuard]}
     ] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'callback', component: CallbackComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard], children: [
-    { path: '', component: DashboardHomeComponent },
-    { path: 'profile', component: ProfileComponent }
-  ] },
-  { path: '**', redirectTo: '' }
+  { path: 'callback', component: CallbackComponent, children: [
+      { path: '**', redirectTo: '/'}
+    ] },
+{ path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard], children: [
+  { path: '', component: DashboardHomeComponent },
+  { path: 'profile', component: ProfileComponent }
+] },
+{ path: '', component: HomeComponent},
+{ path: '**', redirectTo: '/' }
 ];
 
 @NgModule({
