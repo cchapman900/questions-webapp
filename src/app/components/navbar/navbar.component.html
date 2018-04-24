@@ -3,7 +3,9 @@
   <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="questions">Questions</a>
+        <!-- TODO: Get routerlink to update questions -->
+        <a class="nav-link" href="/questions">Questions</a>
+        <!-- <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="questions">Questions</a> -->
       </li>
     </ul>
   </div>
@@ -27,8 +29,6 @@
           {{ username }}
         </a>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="dashboard">Dashboard</a>
-          <div class="dropdown-divider"></div>
           <a class="dropdown-item" (click)="auth.logout()">Logout</a>
         </div>
       </li>

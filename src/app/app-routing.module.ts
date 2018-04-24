@@ -17,7 +17,7 @@ export const ROUTES: Routes = [
   { path: '', component: HomeComponent},
   { path: 'questions', component: QuestionComponent, children: [
       { path: '', component: ListQuestionsComponent},
-      { path: ':question_id/edit', component: EditQuestionComponent}
+      { path: ':question_id/edit', component: EditQuestionComponent, canActivate: [AuthGuard]}
     ] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

@@ -35,7 +35,7 @@
 
       <hr/>
 
-      <div class="text-center">
+      <div class="text-center" *ngIf="auth.isAuthenticated()">
         <button type="button" routerLink="/questions/{{question._id}}/edit" class="btn btn-primary card-link">Edit question</button>
         <button type="button" (click)="deleteQuestion(question._id)" class="btn btn-danger card-link">Delete question</button>
       </div>

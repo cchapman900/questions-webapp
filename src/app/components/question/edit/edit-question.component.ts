@@ -65,7 +65,6 @@ export class EditQuestionComponent implements OnInit {
       this.questionService.updateQuestion(this.question)
         .subscribe(
           (question) => {
-            console.log(question);
             this.question = question;
             this.goBack();
           },

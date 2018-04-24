@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionService } from '../../../services/question/question.service';
+import { AuthService } from '../../../services/auth/auth.service';
 import { Question } from '../../../models/question';
 import {ActivatedRoute, Router, ParamMap} from '@angular/router';
 
@@ -14,7 +15,8 @@ export class ListQuestionsComponent implements OnInit {
 
   constructor(public questionService: QuestionService,
               private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              public auth: AuthService) { }
 
   ngOnInit() {
     this.route.queryParamMap
