@@ -16,7 +16,7 @@ import {AuthGuardService as AuthGuard} from './services/auth/auth-guard.service'
 export const ROUTES: Routes = [
   { path: 'questions', component: QuestionComponent, children: [
       { path: '', component: ListQuestionsComponent},
-      { path: ':question_id/edit', component: EditQuestionComponent, canActivate: [AuthGuard]}
+      { path: ':question_id/edit', component: EditQuestionComponent}
     ] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
