@@ -28,6 +28,10 @@ export class QuestionService {
     return this.http.put<Question>(this.questionsUrl + '/' + question._id, question);
   }
 
+  deleteQuestion (question_id: string): Observable<Question> {
+    return this.http.delete<Question>(this.questionsUrl + '/' + question_id);
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.

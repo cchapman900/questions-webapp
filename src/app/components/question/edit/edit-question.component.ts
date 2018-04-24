@@ -61,6 +61,13 @@ export class EditQuestionComponent implements OnInit {
       );
   }
 
+  deleteQuestion() {
+    this.questionService.deleteQuestion(this.question_id)
+      .subscribe(() => {
+        this.goBack();
+      });
+  }
+
   goBack() {
     this.location.back();
   }
