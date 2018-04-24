@@ -3,7 +3,7 @@
   <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLink="questions">Questions</a>
+        <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="questions">Questions</a>
       </li>
     </ul>
   </div>

@@ -1,5 +1,6 @@
 <div class="container">
   <h1>Question Editor</h1>
+  <p><button class="btn btn-light btn-sm" (click)="goBack()">< Back</button></p>
   <hr/>
   <p class="alert alert-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
   <div class="card col-md-6 offset-md-3">
@@ -7,7 +8,7 @@
       <div class="form-group">
         <label for="question">Question</label>
         <input type="text" class="form-control" id="question"
-               required
+               required minlength="1"
                [(ngModel)]="question.question" name="question">
       </div>
 
@@ -33,7 +34,7 @@
         </div>
         <div class="row">
           <div class="col-2 offset-10">
-            <a *ngIf="question.distractors.slice(-1)[0]" class="btn btn-success form-control" (click)="addDistractor()">+</a>
+            <a *ngIf="question?.distractors.slice(-1)[0]" class="btn btn-success form-control" (click)="addDistractor()">+</a>
           </div>
         </div>
       </div>

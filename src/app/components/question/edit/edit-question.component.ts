@@ -7,6 +7,8 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap';
 
 
+
+
 @Component({
   selector: 'app-edit-question',
   templateUrl: './edit-question.component.html',
@@ -17,7 +19,6 @@ export class EditQuestionComponent implements OnInit {
   question$: Observable<Question>;
   question: Question;
   errorMessage: string;
-
 
   trackByFn(index, item) {
     return index; // or item.id
@@ -32,6 +33,8 @@ export class EditQuestionComponent implements OnInit {
     this.getQuestion();
     // This doesn't seem like the best way to have to use the Observable
     this.question$.subscribe((question) => this.question = question);
+
+
   }
 
   getQuestion() {
@@ -51,14 +54,24 @@ export class EditQuestionComponent implements OnInit {
   }
 
   updateQuestion() {
-    this.questionService.updateQuestion(this.question)
-      .subscribe(
-        (question) => {
-          this.question = question;
-          this.goBack();
-        },
-        (error) => this.errorMessage
-      );
+    // TODO: Update to reactive Validator
+    if (this.question.question === '') {
+      this.errorMessage = 'Question cannot be empty';
+    } else if (this.question.answer === '') {
+      this.errorMessage = 'Answer cannot be empty';
+    } else if (!this.noneEmpty(this.question.distractors || this.question.distractors.length < 1)) {
+      this.errorMessage = 'Distractors cannot be empty';
+    } else {
+      this.questionService.updateQuestion(this.question)
+        .subscribe(
+          (question) => {
+            console.log(question);
+            this.question = question;
+            this.goBack();
+          },
+          (error) => this.errorMessage
+        );
+    }
   }
 
   deleteQuestion() {
@@ -70,6 +83,15 @@ export class EditQuestionComponent implements OnInit {
 
   goBack() {
     this.location.back();
+  }
+
+  private noneEmpty(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === '') {
+        return false;
+      }
+    }
+    return true;
   }
 
 }

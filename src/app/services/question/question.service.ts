@@ -25,7 +25,11 @@ export class QuestionService {
   }
 
   updateQuestion (question: Question): Observable<Question> {
-    return this.http.put<Question>(this.questionsUrl + '/' + question._id, question);
+    return this.http.put<Question>(this.questionsUrl + '/' + question._id, question)
+      .pipe(
+        tap(_ => console.log('Update question')),
+        catchError(this.handleError<any>('updateQuestion', []))
+      );
   }
 
   deleteQuestion (question_id: string): Observable<Question> {
